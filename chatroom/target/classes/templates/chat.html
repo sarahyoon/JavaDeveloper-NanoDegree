@@ -36,9 +36,7 @@
                         <input class="mdui-textfield-input" id="msg"/>
                     </div>
                     <div class="mdui-container" style="padding:20px 35px">
-                        <button class="mdui-btn mdui-color-theme-accent mdui-ripple"
-                                onclick="sendMsgToServer()">Send (enter)
-                        </button>
+                        <!-- TODO: add a send button to send message -->
                         <button class="mdui-btn mdui-color-theme mdui-ripple"
                                 onclick="clearMsg()">Clear
                         </button>
@@ -57,11 +55,9 @@
                     <span class="mdui-chip-icon mdui-color-blue">
                         <i class="mdui-icon material-icons">face</i></span>
                     <span class="mdui-chip-title">Online Users</span>
-                    <span class="mdui-chip-title chat-num">0</span>
+                    <!-- TODO: check online number num -->
                 </div>
-                <div class="message-container">
-
-                </div>
+                <!-- TODO: add a message container -->
             </div>
 
         </div>
@@ -80,7 +76,7 @@
         /**
          * WebSocket client PS：URL shows WebSocket protocal, port number, and then end point.
          */
-        var webSocket = new WebSocket(/*[[${webSocketUrl}]]*/ 'ws://localhost:8080/chat');
+        var webSocket = new WebSocket('ws://localhost:8080/chat/' + /*[[${username}]]*/ );
         /**
          * websocket open connection.
          */
@@ -156,6 +152,7 @@
         var e = event || window.event || arguments.callee.caller.arguments[0];
         e.keyCode === 13 && sendMsgToServer();
     };
+
 </script>
 
 </body>

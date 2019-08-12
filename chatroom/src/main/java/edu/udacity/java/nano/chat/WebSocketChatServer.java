@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 
 @Component
-@ServerEndpoint("/chat")
+@ServerEndpoint("/chat/{username}")
 public class WebSocketChatServer {
 
     /**
@@ -33,6 +33,7 @@ public class WebSocketChatServer {
     @OnOpen
     public void onOpen(Session session) {
         //TODO: add on open connection.
+        onlineSessions.put("session", session);
     }
 
     /**
