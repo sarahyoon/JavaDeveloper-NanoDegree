@@ -36,7 +36,9 @@
                         <input class="mdui-textfield-input" id="msg"/>
                     </div>
                     <div class="mdui-container" style="padding:20px 35px">
-                        <!-- TODO: add a send button to send message -->
+                        <button class="mdui-btn mdui-color-theme mdui-ripple"
+                                onclick="sendMsgToServer()">Send
+                        </button>
                         <button class="mdui-btn mdui-color-theme mdui-ripple"
                                 onclick="clearMsg()">Clear
                         </button>
@@ -57,7 +59,8 @@
                     <span class="mdui-chip-title">Online Users</span>
                     <!-- TODO: check online number num -->
                 </div>
-                <!-- TODO: add a message container -->
+                <div class="message-container">
+                </div>
             </div>
 
         </div>
