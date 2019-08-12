@@ -1,4 +1,4 @@
-#PROJECT 1
+# Project 1
 
 # Chat Room
 The Simple ChatRoom Application implementation using WebSocket.
