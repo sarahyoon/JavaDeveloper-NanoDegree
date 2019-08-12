@@ -5,18 +5,18 @@ package edu.udacity.java.nano.chat;
  */
 public class Message {
     // TODO: add message model.
-    private String text;
+    private String name;
 
     public Message(){}
     public Message(String text){
-        this.text = text;
+        this.name = text;
     }
 
-    public String getText() {
-        return text;
+    public String getName() {
+        return name;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setName (String name) {
+        this.name = name;
     }
 }

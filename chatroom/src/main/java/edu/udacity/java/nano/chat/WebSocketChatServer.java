@@ -2,12 +2,10 @@ package edu.udacity.java.nano.chat;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.core.io.JsonStringEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
-import java.rmi.server.ExportException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -27,12 +25,17 @@ public class WebSocketChatServer {
      */
     private static Map<String, Session> onlineSessions = new ConcurrentHashMap<>();
 
-    private static void sendMessageToAll(String msg, Session session) {
-        try{
-            onlineSessions.get(session.getId()).getBasicRemote().sendText(msg);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+    private static void sendMessageToAll(String msg){
+
+            onlineSessions.forEach((username, session)-> {
+                try{
+                    onlineSessions.get(username).getBasicRemote().sendText(msg);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+
+            });
     }
 
     /**
@@ -40,7 +43,9 @@ public class WebSocketChatServer {
      */
     @OnOpen
     public void onOpen(Session session) {
-        onlineSessions.put(session.getId(), session);
+        Message message = new Message();
+        message.setName(session.getPathParameters().get("username"));
+        onlineSessions.put(message.getName(), session);
     }
 
     /**
@@ -50,9 +55,10 @@ public class WebSocketChatServer {
     public void onMessage(Session session, String jsonStr) {
         JSONObject jsonObject = JSON.parseObject(jsonStr);
         jsonObject.put("type", "SPEAK");
+        jsonObject.put("onlineCount", onlineSessions.size());
         jsonStr = jsonObject.toJSONString();
 
-        sendMessageToAll(jsonStr, session);
+        sendMessageToAll(jsonStr);
     }
 
     /**
@@ -60,7 +66,9 @@ public class WebSocketChatServer {
      */
     @OnClose
     public void onClose(Session session) throws Exception {
-        onlineSessions.get(session.getId()).close();
+
+        onlineSessions.remove(session.getPathParameters().get("username"));
+
     }
 
     /**
