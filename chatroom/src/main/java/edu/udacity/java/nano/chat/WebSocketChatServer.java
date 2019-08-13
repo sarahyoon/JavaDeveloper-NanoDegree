@@ -43,6 +43,7 @@ public class WebSocketChatServer {
      */
     @OnOpen
     public void onOpen(Session session) {
+
         Message message = new Message();
         message.setName(session.getPathParameters().get("username"));
         onlineSessions.put(message.getName(), session);
@@ -54,7 +55,7 @@ public class WebSocketChatServer {
     @OnMessage
     public void onMessage(Session session, String jsonStr) {
         JSONObject jsonObject = JSON.parseObject(jsonStr);
-        jsonObject.put("type", "SPEAK");
+        jsonObject.put("type", Message.Type.SPEAK);
         jsonObject.put("onlineCount", onlineSessions.size());
         jsonStr = jsonObject.toJSONString();
 
