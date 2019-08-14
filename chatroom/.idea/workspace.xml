@@ -13,13 +13,35 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="chat.html" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chat.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="261">
+                    <caret line="101" column="58" lean-forward="true" selection-start-line="101" selection-end-line="102" />
+                    <folding>
+                      <element signature="n#style#0;n#i#0;n#span#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="WebSocketChatServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="19" column="22" selection-start-line="19" selection-end-line="20" />
+            <state relative-caret-position="227">
+              <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,23 +52,17 @@
       <file leaf-file-name="WebSocketChatServerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chat.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chat.html">
+      <file leaf-file-name="WebSocketConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="81" column="53" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#span#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -54,10 +70,23 @@
       <file leaf-file-name="WebSocketChatApplicationTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="388">
+              <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-end-line="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSocketChatApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+              <folding>
+                <element signature="e#701#702#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,6 +109,7 @@
       <find>chat-num</find>
       <find>onmessage</find>
       <find>chat</find>
+      <find />
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -88,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/templates/chat.html" />
         <option value="$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplication.java" />
         <option value="$PROJECT_DIR$/src/main/test/java/unitTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/Message.java" />
@@ -97,6 +126,9 @@
         <option value="$PROJECT_DIR$/src/main/java/test/junitTest.java" />
         <option value="$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/chat.html" />
         <option value="$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java" />
       </list>
     </option>
@@ -109,10 +141,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="108" />
-    <option name="y" value="92" />
-    <option name="width" value="1829" />
-    <option name="height" value="1060" />
+    <option name="x" value="375" />
+    <option name="y" value="138" />
+    <option name="width" value="1571" />
+    <option name="height" value="1101" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -120,6 +152,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -207,7 +240,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,39 +389,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WebSocketChatApplicationTest - 2019.08.13 at 22h 51m 39s.xml">
-      <configuration name="WebSocketChatApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WebSocketChatApplicationTest - 2019.08.13 at 22h 52m 56s.xml">
-      <configuration name="WebSocketChatApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WebSocketChatApplicationTest - 2019.08.13 at 22h 55m 06s.xml">
-      <configuration name="WebSocketChatApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WebSocketChatApplicationTest - 2019.08.13 at 22h 56m 04s.xml">
-      <configuration name="WebSocketChatApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WebSocketChatApplicationTest - 2019.08.13 at 22h 56m 52s.xml">
-      <configuration name="WebSocketChatApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WebSocketChatApplicationTest - 2019.08.13 at 22h 57m 34s.xml">
-      <configuration name="WebSocketChatApplicationTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 01h 12m 15s.xml">
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 22h 52m 48s.xml">
       <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 01h 22m 19s.xml">
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 06m 58s.xml">
       <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 01h 23m 51s.xml">
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 08m 18s.xml">
       <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 01h 28m 49s.xml">
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 09m 30s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 10m 13s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 15m 32s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 16m 38s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 17m 08s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 18m 53s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.14 at 23h 31m 52s.xml">
       <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="997" y="69" width="1829" height="1060" extended-state="0" />
+    <frame x="105" y="178" width="1270" height="1101" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -398,15 +430,15 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008394" side_tool="true" weight="0.2741433" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50162864" side_tool="true" weight="0.35059762" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="right" id="Json Parser" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.32917964" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.32768923" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32917964" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49916062" weight="0.2741433" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49837133" weight="0.35059762" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19753778" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18403909" />
       <window_info anchor="bottom" id="Problems" order="7" weight="0.32948717" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -427,10 +459,10 @@
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.32917964" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.32768923" />
       <window_info anchor="bottom" id="Problems" order="7" weight="0.32948717" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19753778" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18403909" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -441,8 +473,8 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32917964" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49916062" weight="0.2741433" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008394" side_tool="true" weight="0.2741433" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49837133" weight="0.35059762" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50162864" side_tool="true" weight="0.35059762" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32917964" />
       <window_info id="Capture Tool" order="6" />
@@ -461,6 +493,164 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="153" column="51" selection-start-line="153" selection-end-line="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="24" column="38" selection-start-line="23" selection-start-column="31" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" column="13" lean-forward="true" selection-start-line="92" selection-start-column="8" selection-end-line="110" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#span#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#span#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="24" column="38" selection-start-line="23" selection-start-column="31" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="32" column="9" lean-forward="true" selection-start-line="32" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="81" column="53" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#span#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+          <folding>
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -494,9 +684,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/Message.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -585,51 +772,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/java/unitTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/test/unitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/junitTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/java/edu/udacity/java/nano/chat/Message.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/unitTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/junitTest.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.0.8.RELEASE/spring-websocket-5.0.8.RELEASE.jar!/org/springframework/web/socket/server/standard/ServerEndpointExporter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -654,13 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1348">
-          <caret line="153" column="51" selection-start-line="153" selection-end-line="154" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -668,13 +809,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/WebSocketChatApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+        <state relative-caret-position="450">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
           <folding>
             <element signature="e#701#702#0" expanded="true" />
             <element signature="e#749#750#0" expanded="true" />
@@ -682,20 +827,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.9.1/selenium-support-3.9.1.jar!/org/openqa/selenium/support/ui/FluentWait.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="19" column="22" selection-start-line="19" selection-end-line="20" />
+        <state relative-caret-position="519">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.9.1/selenium-support-3.9.1.jar!/org/openqa/selenium/support/ui/WebDriverWait.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/htmlunit-driver/2.29.3/htmlunit-driver-2.29.3.jar!/org/openqa/selenium/htmlunit/HtmlUnitWebElement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="62" column="20" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-end-line="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/WebSocketChatApplicationTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/htmlunit-driver/2.29.3/htmlunit-driver-2.29.3.jar!/org/openqa/selenium/htmlunit/HtmlUnitDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="212">
+          <caret line="368" selection-start-line="368" selection-end-line="368" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="132" column="6" lean-forward="true" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/udacity/java/nano/chat/WebSocketChatServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -704,8 +891,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="81" column="53" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="53" />
+        <state relative-caret-position="261">
+          <caret line="101" column="58" lean-forward="true" selection-start-line="101" selection-end-line="102" />
           <folding>
             <element signature="n#style#0;n#i#0;n#span#1;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -714,11 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -739,7 +923,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -799,7 +983,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.2.3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
