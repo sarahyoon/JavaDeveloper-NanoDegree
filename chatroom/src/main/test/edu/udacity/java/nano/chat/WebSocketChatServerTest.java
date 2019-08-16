@@ -1,19 +1,25 @@
 package edu.udacity.java.nano.chat;
 
-        import org.junit.Test;
+        import org.junit.jupiter.api.Test;
+        import org.junit.runner.RunWith;
         import org.openqa.selenium.By;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebElement;
         import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-        import org.openqa.selenium.support.ui.ExpectedCondition;
-        import org.openqa.selenium.support.ui.WebDriverWait;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.boot.test.context.SpringBootTest;
+        import org.springframework.test.context.junit4.SpringRunner;
 
+        import static org.assertj.core.api.Assertions.assertThat;
 
-public class WebSocketChatServerTest{
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {WebSocketChatServerTest.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class WebSocketChatServerTest{
+    @Autowired
+    private WebSocketChatServer webSocketChatServer;
 
-
+    @Autowired
     private WebDriver webDriver;
-
     private String test_url = "http://localhost:8080";
 
     @Test
@@ -27,14 +33,8 @@ public class WebSocketChatServerTest{
 
         WebElement login = webDriver.findElement(By.className("submit"));
         login.click();
-
-        (new WebDriverWait(webDriver, 10)).until(new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver d){
-                WebElement username1 = webDriver.findElement(By.name("username"));
-                System.out.println("username: " + username1.getText());
-                return username1.getText().equals("aaa");
-            }
-        });
+        WebElement username1 = webDriver.findElement(By.name("username"));
+        assertThat(webDriver.findElement(By.id("username")).getText()).isEqualTo(username1.getText());
 
     }
 
@@ -55,7 +55,7 @@ public class WebSocketChatServerTest{
         WebElement leaveChat = webDriver.findElement(By.className("exit"));
         leaveChat.click();
 
-        System.out.println("GO TO MAIN PAGE: "+webDriver.getCurrentUrl());
+        assertThat(webDriver.getCurrentUrl()).contains("/");
 
     }
 
