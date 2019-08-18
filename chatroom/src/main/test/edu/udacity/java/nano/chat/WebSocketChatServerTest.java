@@ -20,6 +20,10 @@ class WebSocketChatServerTest{
 
     @Autowired
     private WebDriver webDriver;
+
+    @Autowired
+    private WebDriver webDriver2;
+
     private String test_url = "http://localhost:8080";
 
     @Test
@@ -33,8 +37,11 @@ class WebSocketChatServerTest{
 
         WebElement login = webDriver.findElement(By.className("submit"));
         login.click();
-        WebElement username1 = webDriver.findElement(By.name("username"));
-        assertThat(webDriver.findElement(By.id("username")).getText()).isEqualTo(username1.getText());
+
+        webDriver2 = new HtmlUnitDriver();
+        String current_url = test_url + "/index?username="+username;
+        webDriver2.get(current_url);
+        assertThat(webDriver2.findElement(By.id("username")).getText()).isEqualTo(username);
 
     }
 
@@ -42,9 +49,13 @@ class WebSocketChatServerTest{
     public void chatAndLeave()
     {
         webDriver = new HtmlUnitDriver();
+        webDriver2 = new HtmlUnitDriver();
 
         String username="aaa";
         webDriver.get(test_url+"/index?username="+username);
+
+        String username2="bbb";
+        webDriver2.get(test_url+"/index?username="+username2);
 
         WebElement sendText = webDriver.findElement(By.id("msg"));
         sendText.sendKeys("send text test");
@@ -52,10 +63,13 @@ class WebSocketChatServerTest{
         WebElement sendButton = webDriver.findElement(By.className("send"));
         sendButton.click();
 
+        //check message shows at user2
+
+
         WebElement leaveChat = webDriver.findElement(By.className("exit"));
         leaveChat.click();
-
-        assertThat(webDriver.getCurrentUrl()).contains("/");
+        assertThat(webDriver.findElement(By.className("submit")).getText().equals("login"));
+        System.out.println("--------------LOGOUT SUCCESS-----------");
 
     }
 
