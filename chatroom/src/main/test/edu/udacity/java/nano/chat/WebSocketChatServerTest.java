@@ -2,14 +2,20 @@ package edu.udacity.java.nano.chat;
 
         import org.junit.jupiter.api.Test;
         import org.junit.runner.RunWith;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.WebElement;
+        import org.openqa.selenium.*;
         import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
+        import org.openqa.selenium.support.ui.FluentWait;
+        import org.openqa.selenium.support.ui.Wait;
+        import org.openqa.selenium.support.ui.WebDriverWait;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.boot.test.context.SpringBootTest;
         import org.springframework.test.context.junit4.SpringRunner;
 
+        import java.util.concurrent.TimeUnit;
+        import java.util.function.Function;
+
+        import static com.google.common.util.concurrent.Futures.withTimeout;
         import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -29,27 +35,32 @@ class WebSocketChatServerTest{
     @Test
     public void loginAndJoinTest()
     {
-        webDriver = new HtmlUnitDriver();
+        webDriver = new HtmlUnitDriver(true);
         webDriver.get(test_url);
+        String inputName="aaa";
 
         WebElement username = webDriver.findElement(By.name("username"));
-        username.sendKeys("aaa");
+        username.sendKeys(inputName);
 
         WebElement login = webDriver.findElement(By.className("submit"));
         login.click();
 
-        webDriver2 = new HtmlUnitDriver();
-        String current_url = test_url + "/index?username="+username;
-        webDriver2.get(current_url);
-        assertThat(webDriver2.findElement(By.id("username")).getText()).isEqualTo(username);
+        System.out.println("!!! Login Success !!!");
+
+       assertThat(webDriver.findElement(By.id ("username")).getAttribute("innerHTML")).isEqualTo(inputName);
+
+
+        System.out.println("!!! Chat Ready !!!");
+
 
     }
+
 
     @Test
     public void chatAndLeave()
     {
-        webDriver = new HtmlUnitDriver();
-        webDriver2 = new HtmlUnitDriver();
+        webDriver = new HtmlUnitDriver(true);
+        webDriver2 = new HtmlUnitDriver(true);
 
         String username="aaa";
         webDriver.get(test_url+"/index?username="+username);
@@ -63,11 +74,17 @@ class WebSocketChatServerTest{
         WebElement sendButton = webDriver.findElement(By.className("send"));
         sendButton.click();
 
-        //check message shows at user2
 
+        WebDriverWait wait = new WebDriverWait(webDriver2, 30);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("message-content")));
+        System.out.println(element.getAttribute("textContent").length());
+        assertThat(element.getAttribute("textContent").substring(4,18)).isEqualTo("send text test");
+
+        System.out.println("--------------SEND CHAT SUCCESS-----------");
 
         WebElement leaveChat = webDriver.findElement(By.className("exit"));
         leaveChat.click();
+
         assertThat(webDriver.findElement(By.className("submit")).getText().equals("login"));
         System.out.println("--------------LOGOUT SUCCESS-----------");
 

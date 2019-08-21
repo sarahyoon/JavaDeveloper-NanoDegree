@@ -133,7 +133,7 @@
 <body>
 <div class="logo_box">
     <h3>Chat Room</h3>
-    <form id = "frm" action="index" method="get">
+    <form id = "frm">
         <div class="input_outer">
             <span class="u_user"></span>
             <input id="username" name="username" class="text" type="text" placeholder="Username">
@@ -151,7 +151,8 @@
      * Login
      */
     function login() {
-        document.getElementById("frm").submit();
+        var username = $("#username").val();
+        location.href = location.href + "index?username="+username;
      }
 
     /**
