@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ddcac0b-621b-4308-b941-93c31db36b96" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/chatroom-starter-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/chatroom-starter-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/chatroom-starter-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/chatroom-starter-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/udacity/java/nano/chat/WebSocketChatServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/udacity/java/nano/chat/WebSocketChatServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/chatroom-starter.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/edu/udacity/java/nano/chat/WebSocketChatServerTest.class" beforeDir="false" />
-    </list>
+    <list default="true" id="4ddcac0b-621b-4308-b941-93c31db36b96" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +36,8 @@
       <file leaf-file-name="WebSocketChatServerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="583">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -294,9 +283,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WebSocketChatServerTest - 2019.08.22 at 23h 23m 55s.xml">
-      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WebSocketChatServerTest - 2019.08.22 at 23h 25m 08s.xml">
       <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
     </history-entry>
@@ -324,6 +310,9 @@
     <history-entry file="WebSocketChatServerTest - 2019.08.22 at 23h 34m 15s.xml">
       <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="WebSocketChatServerTest - 2019.08.22 at 23h 39m 02s.xml">
+      <configuration name="WebSocketChatServerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,7 +338,7 @@
       <window_info anchor="right" id="Json Parser" order="3" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3287879" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32954547" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3287879" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3287879" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22741242" />
@@ -584,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test/edu/udacity/java/nano/chat/WebSocketChatServerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        <state relative-caret-position="583">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
