@@ -4,9 +4,11 @@ import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.udacity.graphql.entity.Location;
 import com.udacity.graphql.exception.LocationNotFoundException;
 import com.udacity.graphql.repository.LocationRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class Mutation implements GraphQLMutationResolver {
 
     private LocationRepository locationRepository;
