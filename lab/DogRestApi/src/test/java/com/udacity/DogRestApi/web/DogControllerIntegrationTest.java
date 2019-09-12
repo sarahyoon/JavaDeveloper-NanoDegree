@@ -20,7 +20,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class DogControllerUnitTest {
+public class DogControllerIntegrationTest {
 
     @LocalServerPort
     private int port;
