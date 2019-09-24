@@ -14,6 +14,9 @@ public class Comments {
     @Column(name = "content")
     private String content;
 
+    @Column(name="reviewID")
+    private int reviewID;
+
     public int getCommentID() {
         return commentID;
     }
@@ -28,5 +31,13 @@ public class Comments {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public int getReviewID() {
+        return reviewID;
+    }
+
+    public void setReviewID(int reviewID) {
+        this.reviewID = reviewID;
     }
 }
