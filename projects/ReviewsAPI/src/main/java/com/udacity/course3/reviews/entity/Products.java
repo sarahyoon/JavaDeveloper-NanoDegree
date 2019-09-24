@@ -8,37 +8,37 @@ public class Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "productId")
-    private int productId;
+    @Column(name = "id")
+    private int id;
 
-    @Column(name = "productName")
-    private String productName;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "productInfo")
-    private String productInfo;
+    @Column(name = "info")
+    private String info;
 
-    public int getProductId() {
-        return productId;
+    public int getId() {
+        return id;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getProductInfo() {
-        return productInfo;
+    public String getInfo() {
+        return info;
     }
 
-    public void setProductInfo(String productInfo) {
-        this.productInfo = productInfo;
+    public void setInfo(String info) {
+        this.info = info;
     }
 }
 

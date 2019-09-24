@@ -1,5 +1,8 @@
 package com.udacity.course3.reviews.controller;
 
+import com.udacity.course3.reviews.entity.Products;
+import com.udacity.course3.reviews.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +18,8 @@ import java.util.List;
 public class ProductsController {
 
     // TODO: Wire JPA repositories here
-
+    @Autowired
+    ProductRepository productRepository;
     /**
      * Creates a product.
      *
@@ -24,10 +28,12 @@ public class ProductsController {
      */
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct() {
-        throw new HttpServerErrorException(HttpStatus.NOT_IMPLEMENTED);
-    }
+    public void createProduct(@RequestBody Products product) {
 
+        product.setName(product.getName());
+        product.setInfo(product.getInfo());
+        productRepository.save(product);
+    }
     /**
      * Finds a product by id.
      *
