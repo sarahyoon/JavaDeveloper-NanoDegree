@@ -9,25 +9,36 @@ public class Reviews {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "reviewId")
-    private int reviewId;
+    @Column(name = "reviewID")
+    private int reviewID;
 
-    @Column(name = "reviewContent")
-    private String reviewContent;
+    @Column(name = "productID")
+    private int productID;
 
-    public int getReviewId() {
-        return reviewId;
+    @Column(name = "content")
+    private String content;
+
+    public int getReviewID() {
+        return reviewID;
     }
 
-    public void setReviewId(int reviewId) {
-        this.reviewId = reviewId;
+    public void setReviewID(int reviewID) {
+        this.reviewID = reviewID;
     }
 
-    public String getReviewContent() {
-        return reviewContent;
+    public int getProductID() {
+        return productID;
     }
 
-    public void setReviewContent(String reviewContent) {
-        this.reviewContent = reviewContent;
+    public void setProductID(int productID) {
+        this.productID = productID;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

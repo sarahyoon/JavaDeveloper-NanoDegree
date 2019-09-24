@@ -8,18 +8,18 @@ public class Comments {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "commentId")
-    private int commentId;
+    @Column(name = "commentID")
+    private int commentID;
 
     @Column(name = "content")
     private String content;
 
-    public int getCommentId() {
-        return commentId;
+    public int getCommentID() {
+        return commentID;
     }
 
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setCommentID(int commentID) {
+        this.commentID = commentID;
     }
 
     public String getContent() {
