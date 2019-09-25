@@ -1,12 +1,11 @@
 package com.udacity.course3.reviews.controller;
 
-import com.udacity.course3.reviews.entity.Products;
+import com.udacity.course3.reviews.entity.Product;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +27,7 @@ public class ProductsController {
      */
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody Products product) {
+    public void createProduct(@RequestBody Product product) {
 
         product.setName(product.getName());
         product.setInfo(product.getInfo());
@@ -42,7 +41,7 @@ public class ProductsController {
      */
     @RequestMapping(value = "/{id}")
     public ResponseEntity<?> findById(@PathVariable("id") Integer id) {
-        Optional<Products> product = productRepository.findById(id);
+        Optional<Product> product = productRepository.findById(id);
         if(!product.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

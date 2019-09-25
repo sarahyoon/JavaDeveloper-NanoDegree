@@ -1,10 +1,12 @@
 package com.udacity.course3.reviews.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +19,12 @@ public class Products {
     @Column(name = "info")
     private String info;
 
+    @OneToMany
+    @JoinColumn(name = "reviewID")
+    private List<Review> review = new ArrayList<>();
+
     public int getProductID() {
         return productID;
-    }
-
-    public void setProductID(int productID) {
-        this.productID = productID;
     }
 
     public String getName() {
@@ -39,6 +41,10 @@ public class Products {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public List<Review> getReview() {
+        return review;
     }
 }
 

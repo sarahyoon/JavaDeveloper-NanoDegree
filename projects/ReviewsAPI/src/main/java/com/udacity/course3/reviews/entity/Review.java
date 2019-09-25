@@ -2,10 +2,12 @@ package com.udacity.course3.reviews.entity;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAnyAttribute;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name= "reviews")
-public class Reviews {
+public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +20,12 @@ public class Reviews {
     @Column(name = "content")
     private String content;
 
+    @OneToMany
+    @JoinColumn(name = "commentID")
+    private List<Comment> comment = new ArrayList<>();
+
     public int getReviewID() {
         return reviewID;
-    }
-
-    public void setReviewID(int reviewID) {
-        this.reviewID = reviewID;
     }
 
     public int getProductID() {
@@ -41,4 +43,7 @@ public class Reviews {
     public void setContent(String content) {
         this.content = content;
     }
+
+
+
 }

@@ -1,6 +1,6 @@
 package com.udacity.course3.reviews;
 
-import com.udacity.course3.reviews.entity.Products;
+import com.udacity.course3.reviews.entity.Product;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,16 +43,16 @@ public class ProductRepositoryTest {
     @Test
     public void testFindProductById(){
 
-        Products products = new Products();
+        Product product = new Product();
 
-        products.setName("testProduct1");
-        products.setInfo("info for product1");
+        product.setName("testProduct1");
+        product.setInfo("info for product1");
 
-        entityManager.persist(products);
+        entityManager.persist(product);
 
-        List<Products> realProduct = productRepository.findById(1);
+        List<Product> realProduct = productRepository.findById(1);
         assertThat(realProduct, is(notNullValue()));
-        assertEquals(products.getProductID(), realProduct.get(0).getProductID());
+        assertEquals(product.getProductID(), realProduct.get(0).getProductID());
 
     }
 

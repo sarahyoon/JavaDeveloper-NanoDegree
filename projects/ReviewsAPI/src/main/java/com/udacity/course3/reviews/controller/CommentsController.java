@@ -1,7 +1,7 @@
 package com.udacity.course3.reviews.controller;
 
-import com.udacity.course3.reviews.entity.Comments;
-import com.udacity.course3.reviews.entity.Reviews;
+import com.udacity.course3.reviews.entity.Comment;
+import com.udacity.course3.reviews.entity.Review;
 import com.udacity.course3.reviews.repository.CommentRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +36,8 @@ public class CommentsController {
      * @param reviewId The id of the review.
      */
     @RequestMapping(value = "/reviews/{reviewId}", method = RequestMethod.POST)
-    public ResponseEntity<?> createCommentForReview(@PathVariable("reviewId") Integer reviewId, @RequestBody Comments comment) {
-        Optional<Reviews> review = reviewRepository.findById(reviewId);
+    public ResponseEntity<?> createCommentForReview(@PathVariable("reviewId") Integer reviewId, @RequestBody Comment comment) {
+        Optional<Review> review = reviewRepository.findById(reviewId);
         if(review.isPresent()){
             comment.setReviewID(reviewId);
             comment.setContent(comment.getContent());
@@ -60,11 +60,11 @@ public class CommentsController {
      */
     @RequestMapping(value = "/reviews/{reviewId}", method = RequestMethod.GET)
     public List<?> listCommentsForReview(@PathVariable("reviewId") Integer reviewId) {
-        Optional<Reviews> review = reviewRepository.findById(reviewId);
+        Optional<Review> review = reviewRepository.findById(reviewId);
         if(!review.isPresent()){
             throw new HttpServerErrorException(HttpStatus.NOT_FOUND);
         }
-        List<Comments> comments = commentRepository.findByReviewID(reviewId);
+        List<Comment> comments = commentRepository.findByReviewID(reviewId);
         return comments;
     }
 }

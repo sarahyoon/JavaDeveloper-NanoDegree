@@ -1,7 +1,7 @@
 package com.udacity.course3.reviews.controller;
 
-import com.udacity.course3.reviews.entity.Products;
-import com.udacity.course3.reviews.entity.Reviews;
+import com.udacity.course3.reviews.entity.Product;
+import com.udacity.course3.reviews.entity.Review;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +36,8 @@ public class ReviewsController {
      * @return The created review or 404 if product id is not found.
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.POST)
-    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Reviews reviews) {
-        Optional<Products> product = productRepository.findById(productId);
+    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review reviews) {
+        Optional<Product> product = productRepository.findById(productId);
         if(product.isPresent()){
             reviews.setProductID(productId);
             reviews.setContent(reviews.getContent());
@@ -57,7 +57,7 @@ public class ReviewsController {
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
-        List<Reviews> reviews = reviewRepository.findByProductID(productId);
+        List<Review> reviews = reviewRepository.findByProductID(productId);
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 }

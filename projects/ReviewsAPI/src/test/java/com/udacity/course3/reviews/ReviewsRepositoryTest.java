@@ -1,7 +1,7 @@
 package com.udacity.course3.reviews;
 
-import com.udacity.course3.reviews.entity.Products;
-import com.udacity.course3.reviews.entity.Reviews;
+import com.udacity.course3.reviews.entity.Product;
+import com.udacity.course3.reviews.entity.Review;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,23 +30,23 @@ public class ReviewsRepositoryTest {
     public void testFindReviewByProductId(){
 
         //Create product
-        Products products = new Products();
+        Product product = new Product();
 
-        products.setName("testProduct1");
-        products.setInfo("info for product1");
+        product.setName("testProduct1");
+        product.setInfo("info for product1");
 
-        entityManager.persist(products);
+        entityManager.persist(product);
 
         //Create Review
-        Reviews reviews = new Reviews();
-        reviews.setProductID(products.getProductID());
-        reviews.setContent("review for product1");
+        Review review = new Review();
+        review.setProductID(product.getProductID());
+        review.setContent("review for product1");
 
-        entityManager.persist(reviews);
+        entityManager.persist(review);
 
-        List<Reviews> realReview = reviewRepository.findByProductID(products.getProductID());
+        List<Review> realReview = reviewRepository.findByProductID(product.getProductID());
         assertThat(realReview, is(notNullValue()));
-        assertEquals(products.getProductID(), realReview.get(0).getProductID());
+        assertEquals(product.getProductID(), realReview.get(0).getProductID());
 
     }
 
