@@ -44,16 +44,15 @@ public class ProductRepositoryTest {
     public void testFindProductById(){
 
         Product product = new Product();
-
+        product.setProductID(2);
         product.setName("testProduct1");
         product.setInfo("info for product1");
 
         entityManager.persist(product);
 
-        List<Product> realProduct = productRepository.findById(1);
+        List<Product> realProduct = productRepository.findById(2);
         assertThat(realProduct, is(notNullValue()));
         assertEquals(product.getProductID(), realProduct.get(0).getProductID());
-
     }
 
 }

@@ -10,5 +10,5 @@ create table reviews(
     productID int(11) not null,
     content varchar(300) not null,
     primary key (reviewID),
-    foreign key (productID) references products (productID)
+    constraint review_fk foreign key (productID) references products (productID)
 );

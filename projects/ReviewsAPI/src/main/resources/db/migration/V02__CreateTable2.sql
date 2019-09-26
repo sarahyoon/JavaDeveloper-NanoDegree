@@ -3,5 +3,5 @@ create table comments(
     reviewID int(11) not null,
     content varchar(300) not null,
     primary key (commentID),
-    foreign key (reviewID) references reviews (reviewID)
+    constraint comment_fk foreign key (reviewID) references reviews (reviewID)
 );
