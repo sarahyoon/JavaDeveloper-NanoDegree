@@ -3,6 +3,7 @@ package com.udacity.course3.reviews.controller;
 import com.udacity.course3.reviews.entity.Product;
 import com.udacity.course3.reviews.entity.Review;
 import com.udacity.course3.reviews.repository.ProductRepository;
+import com.udacity.course3.reviews.repository.ReviewMongoRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +24,9 @@ public class ReviewsController {
 
     @Autowired
     ProductRepository productRepository;
+
+    @Autowired
+    ReviewMongoRepository reviewMongoRepository;
 
     /**
      * Creates a review for a product.
