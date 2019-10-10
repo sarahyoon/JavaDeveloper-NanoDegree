@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -75,6 +76,12 @@ public class ReviewsController {
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
         List<Review> reviews = reviewRepository.findByProductID(productId);
-        return new ResponseEntity<>(reviews, HttpStatus.OK);
+        List<ReviewDocument> reviewDocuments = new ArrayList<>();
+        for(Review r : reviews){
+            ReviewDocument addReview = reviewMongoRepository.findByReviewID(r.getReviewID());
+            reviewDocuments.add(addReview);
+        }
+
+        return new ResponseEntity<>(reviewDocuments, HttpStatus.OK);
     }
 }
