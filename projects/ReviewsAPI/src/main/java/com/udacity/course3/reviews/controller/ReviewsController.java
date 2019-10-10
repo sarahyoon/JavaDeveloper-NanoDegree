@@ -2,6 +2,7 @@ package com.udacity.course3.reviews.controller;
 
 import com.udacity.course3.reviews.entity.Product;
 import com.udacity.course3.reviews.entity.Review;
+import com.udacity.course3.reviews.entity.ReviewDocument;
 import com.udacity.course3.reviews.repository.ProductRepository;
 import com.udacity.course3.reviews.repository.ReviewMongoRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
@@ -43,9 +44,21 @@ public class ReviewsController {
     public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review reviews) {
         Optional<Product> product = productRepository.findById(productId);
         if(product.isPresent()){
+            //save mysql
             reviews.setProductID(productId);
             reviews.setContent(reviews.getContent());
             reviewRepository.save(reviews);
+
+            //save mongoDB
+            List<Review> savedReview = reviewRepository.findByProductID(productId);
+            for(Review r : savedReview){
+                ReviewDocument reviewDocument = new ReviewDocument();
+                reviewDocument.setReviewID(r.getReviewID());
+                reviewDocument.setContent(r.getContent());
+                reviewDocument.setProductID(r.getProductID());
+                reviewMongoRepository.save(reviewDocument);
+            }
+
         }
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
