@@ -2,14 +2,18 @@ package com.udacity.course3.reviews.controller;
 
 import com.udacity.course3.reviews.entity.Comment;
 import com.udacity.course3.reviews.entity.Review;
+import com.udacity.course3.reviews.entity.ReviewDocument;
 import com.udacity.course3.reviews.repository.CommentRepository;
+import com.udacity.course3.reviews.repository.ReviewMongoRepository;
 import com.udacity.course3.reviews.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +29,9 @@ public class CommentsController {
 
     @Autowired
     CommentRepository commentRepository;
+
+    @Autowired
+    ReviewMongoRepository reviewMongoRepository;
     /**
      * Creates a comment for a review.
      *
@@ -39,9 +46,17 @@ public class CommentsController {
     public ResponseEntity<?> createCommentForReview(@PathVariable("reviewId") Integer reviewId, @RequestBody Comment comment) {
         Optional<Review> review = reviewRepository.findById(reviewId);
         if(review.isPresent()){
+            //save mysql
             comment.setReviewID(reviewId);
             comment.setContent(comment.getContent());
             commentRepository.save(comment);
+
+            //save mongoDB
+            ReviewDocument reviewDocument = reviewMongoRepository.findByReviewID(reviewId);
+            List<Comment> commentList = new ArrayList<>();
+            commentList.add(comment);
+            reviewDocument.setComment(commentList);
+            reviewMongoRepository.save(reviewDocument);
         }
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
