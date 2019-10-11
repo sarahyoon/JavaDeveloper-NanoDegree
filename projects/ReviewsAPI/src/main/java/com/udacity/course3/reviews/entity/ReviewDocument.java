@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class ReviewDocument {
 
     private int productID;
 
+    @NotNull(message = "please add content")
     private String content;
 
     private List<Comment> comment = new ArrayList<>();

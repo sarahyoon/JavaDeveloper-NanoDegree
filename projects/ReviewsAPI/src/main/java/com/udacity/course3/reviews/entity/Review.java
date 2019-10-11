@@ -1,6 +1,7 @@
 package com.udacity.course3.reviews.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAnyAttribute;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class Review {
     private int productID;
 
     @Column(name = "content")
+    @NotNull(message = "please add content")
     private String content;
 
     @OneToMany

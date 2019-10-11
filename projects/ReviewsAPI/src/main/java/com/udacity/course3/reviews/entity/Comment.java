@@ -1,6 +1,7 @@
 package com.udacity.course3.reviews.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="comments")
@@ -12,6 +13,7 @@ public class Comment {
     private int commentID;
 
     @Column(name = "content")
+    @NotNull(message = "please add comment")
     private String content;
 
     @Column(name="reviewID")

@@ -16,9 +16,11 @@ public class Product {
     private int productID;
 
     @Column(name = "name")
+    @NotNull(message = "please add name")
     private String name;
 
     @Column(name = "info")
+    @NotNull(message = "please add info")
     private String info;
 
     @OneToMany
