@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.util.Optional;
 
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +22,9 @@ import com.example.demo.model.requests.CreateUserRequest;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-	
+
+	private Logger log;
+
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -46,6 +49,13 @@ public class UserController {
 		Cart cart = new Cart();
 		cartRepository.save(cart);
 		user.setCart(cart);
+
+		if(createUserRequest.getPassword().length()<7 ||
+				!createUserRequest.getPassword().equals(createUserRequest.getConfirmPassword())){
+			log.error("Error with user password. Cannot create user {}", createUserRequest.getUsername());
+			return ResponseEntity.badRequest().build();
+		}
+
 		userRepository.save(user);
 		return ResponseEntity.ok(user);
 	}
