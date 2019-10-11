@@ -12,7 +12,8 @@ import java.util.List;
 public class ReviewDocument {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
+
     private int reviewID;
 
     private int productID;
