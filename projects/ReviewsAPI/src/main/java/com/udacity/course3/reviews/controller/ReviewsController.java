@@ -44,6 +44,7 @@ public class ReviewsController {
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.POST)
     public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review reviews) {
         Optional<Product> product = productRepository.findById(productId);
+        ReviewDocument reviewDocument = new ReviewDocument();
         if(product.isPresent()){
             //save mysql
             reviews.setProductID(productId);
@@ -51,20 +52,17 @@ public class ReviewsController {
             reviewRepository.save(reviews);
 
             //save mongoDB
-            List<Review> savedReview = reviewRepository.findByProductID(productId);
-            for(Review r : savedReview){
-                ReviewDocument reviewDocument = new ReviewDocument();
-                reviewDocument.setReviewID(r.getReviewID());
-                reviewDocument.setContent(r.getContent());
-                reviewDocument.setProductID(r.getProductID());
-                reviewMongoRepository.save(reviewDocument);
-            }
-
+            reviewDocument.setProductID(productId);
+            reviewDocument.setReviewID(reviews.getReviewID());
+            reviewDocument.setContent(reviews.getContent());
+            reviewMongoRepository.save(reviewDocument);
         }
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(reviews, HttpStatus.OK);
+
+        Optional<Review> savedReview = reviewRepository.findById(reviews.getReviewID());
+        return new ResponseEntity<>(savedReview, HttpStatus.OK);
     }
 
     /**

@@ -28,11 +28,15 @@ public class ProductsController {
      */
     @RequestMapping(value = "/", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody @Valid Product product) {
+    public ResponseEntity<?> createProduct(@RequestBody @Valid Product product) {
 
         product.setName(product.getName());
         product.setInfo(product.getInfo());
         productRepository.save(product);
+
+        //retrieve product data from db
+        List<Product> savedProduct = productRepository.findById(product.getProductID());
+        return new ResponseEntity<>(savedProduct, HttpStatus.OK);
     }
     /**
      * Finds a product by id.
