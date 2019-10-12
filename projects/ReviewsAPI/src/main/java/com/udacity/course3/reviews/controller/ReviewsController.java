@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,25 +42,27 @@ public class ReviewsController {
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.POST)
     public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review reviews) {
-        Optional<Product> product = productRepository.findById(productId);
-        ReviewDocument reviewDocument = new ReviewDocument();
-        if(product.isPresent()){
+        Optional<Product> OptionalProduct = productRepository.findById(productId);
+
+        if(OptionalProduct.isPresent()){
+            Product product = OptionalProduct.get();
             //save mysql
-            reviews.setProductID(productId);
+            reviews.setProduct(product);
             reviews.setContent(reviews.getContent());
             reviewRepository.save(reviews);
 
             //save mongoDB
-            reviewDocument.setProductID(productId);
+            ReviewDocument reviewDocument = new ReviewDocument();
             reviewDocument.setReviewID(reviews.getReviewID());
             reviewDocument.setContent(reviews.getContent());
+            reviewDocument.setProductID(productId);
             reviewMongoRepository.save(reviewDocument);
         }
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        Optional<Review> savedReview = reviewRepository.findById(reviews.getReviewID());
+        List<ReviewDocument> savedReview = reviewMongoRepository.findByProductID(productId);
         return new ResponseEntity<>(savedReview, HttpStatus.OK);
     }
 
@@ -73,13 +74,7 @@ public class ReviewsController {
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.GET)
     public ResponseEntity<List<?>> listReviewsForProduct(@PathVariable("productId") Integer productId) {
-        List<Review> reviews = reviewRepository.findByProductID(productId);
-        List<ReviewDocument> reviewDocuments = new ArrayList<>();
-        for(Review r : reviews){
-            ReviewDocument addReview = reviewMongoRepository.findByReviewID(r.getReviewID());
-            reviewDocuments.add(addReview);
-        }
-
-        return new ResponseEntity<>(reviewDocuments, HttpStatus.OK);
+        List<ReviewDocument> reviews = reviewMongoRepository.findByProductID(productId);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 }

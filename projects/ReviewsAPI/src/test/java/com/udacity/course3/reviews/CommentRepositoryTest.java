@@ -43,20 +43,20 @@ public class CommentRepositoryTest {
 
         //Create Review
         Review review = new Review();
-        review.setProductID(product.getProductID());
+        review.setProduct(product);
         review.setContent("review for product1");
         entityManager.persist(review);
 
 
         //Create Comment
         Comment comment = new Comment();
-        comment.setReviewID(review.getReviewID());
+        comment.setReview(review);
         comment.setContent("comment for review");
         entityManager.persist(comment);
 
-        List<Comment> realComment = commentRepository.findByReviewID(review.getReviewID());
+        List<Comment> realComment = commentRepository.findByReview(review);
         assertThat(realComment, is(notNullValue()));
-        assertEquals(review.getReviewID(), realComment.get(0).getReviewID());
+        assertEquals(review.getReviewID(), realComment.get(0).getReview().getReviewID());
 
     }
 }

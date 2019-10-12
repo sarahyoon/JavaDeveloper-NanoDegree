@@ -1,5 +1,7 @@
 package com.udacity.course3.reviews.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -23,8 +25,8 @@ public class Product {
     @NotNull(message = "please add info")
     private String info;
 
-    @OneToMany
-    @JoinColumn(name = "reviewID")
+    @OneToMany(mappedBy = "product")
+    @JsonIgnore
     private List<Review> review = new ArrayList<>();
 
     public int getProductID() {
@@ -52,5 +54,6 @@ public class Product {
     public List<Review> getReview() {
         return review;
     }
+
 }
 

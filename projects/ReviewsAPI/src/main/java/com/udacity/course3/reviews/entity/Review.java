@@ -1,5 +1,7 @@
 package com.udacity.course3.reviews.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAnyAttribute;
@@ -15,27 +17,22 @@ public class Review {
     @Column(name = "reviewID")
     private int reviewID;
 
-    @Column(name = "productID")
-    private int productID;
-
     @Column(name = "content")
     @NotNull(message = "please add content")
     private String content;
 
-    @OneToMany
-    @JoinColumn(name = "commentID")
+    @ManyToOne
+    @JoinColumn(name="productID")
+    private Product product;
+
+    @OneToMany(mappedBy = "review")
+    @JsonIgnore
     private List<Comment> comment = new ArrayList<>();
+
+    public void setReviewID(int reviewID){this.reviewID = reviewID; }
 
     public int getReviewID() {
         return reviewID;
-    }
-
-    public int getProductID() {
-        return productID;
-    }
-
-    public void setProductID(int productID) {
-        this.productID = productID;
     }
 
     public String getContent() {
@@ -46,6 +43,11 @@ public class Review {
         this.content = content;
     }
 
+    public Product getProduct() {
+        return product;
+    }
 
-
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }

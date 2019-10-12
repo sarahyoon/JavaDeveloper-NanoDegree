@@ -28,10 +28,6 @@ public class ReviewDocument {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public int getReviewID() {
         return reviewID;
     }

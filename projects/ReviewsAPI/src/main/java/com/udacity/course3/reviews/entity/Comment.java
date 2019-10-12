@@ -16,8 +16,9 @@ public class Comment {
     @NotNull(message = "please add comment")
     private String content;
 
-    @Column(name="reviewID")
-    private int reviewID;
+    @ManyToOne
+    @JoinColumn(name = "reviewID")
+    private Review review;
 
     public int getCommentID() {
         return commentID;
@@ -35,11 +36,12 @@ public class Comment {
         this.content = content;
     }
 
-    public int getReviewID() {
-        return reviewID;
+    public Review getReview() {
+        return review;
     }
 
-    public void setReviewID(int reviewID) {
-        this.reviewID = reviewID;
+    public void setReview(Review review) {
+        this.review = review;
     }
 }
+

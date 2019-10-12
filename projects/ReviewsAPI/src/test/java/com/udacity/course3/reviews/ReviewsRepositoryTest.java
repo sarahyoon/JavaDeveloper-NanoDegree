@@ -39,14 +39,14 @@ public class ReviewsRepositoryTest {
 
         //Create Review
         Review review = new Review();
-        review.setProductID(product.getProductID());
+        review.setProduct(product);
         review.setContent("review for product1");
 
         entityManager.persist(review);
 
-        List<Review> realReview = reviewRepository.findByProductID(product.getProductID());
+        List<Review> realReview = reviewRepository.findByProduct(product);
         assertThat(realReview, is(notNullValue()));
-        assertEquals(product.getProductID(), realReview.get(0).getProductID());
+        assertEquals(product.getProductID(), realReview.get(0).getProduct().getProductID());
 
     }
 

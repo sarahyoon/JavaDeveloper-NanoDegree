@@ -2,6 +2,7 @@ package com.udacity.course3.reviews.mongoDBTest;
 
 import com.mongodb.BasicDBObjectBuilder;
 import com.mongodb.DBObject;
+import com.udacity.course3.reviews.entity.Review;
 import com.udacity.course3.reviews.entity.ReviewDocument;
 import com.udacity.course3.reviews.repository.ReviewMongoRepository;
 import org.junit.Test;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -27,6 +30,7 @@ public class ReviewRepositoryTestMongo {
 
     @Test
     public void mongoDBTest(){
+
         //Create Review
         DBObject objectToSave = BasicDBObjectBuilder.start()
                 .add("reviewID", 101)
@@ -34,10 +38,10 @@ public class ReviewRepositoryTestMongo {
                 .add("productID", 1).get();
         mongoTemplate.save(objectToSave, "reviews");
 
-        ReviewDocument realReview = reviewRepository.findByReviewID(101);
+        List<ReviewDocument> realReview = reviewRepository.findByProductID(1);
 
         assertThat(realReview, is(notNullValue()));
-        assertEquals(1, realReview.getProductID());
+        assertEquals(101, realReview.get(0).getReviewID());
         System.out.println(mongoTemplate.findAll(DBObject.class, "reviews"));
     }
 }
