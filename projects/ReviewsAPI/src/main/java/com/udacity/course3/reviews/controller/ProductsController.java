@@ -34,9 +34,7 @@ public class ProductsController {
         product.setInfo(product.getInfo());
         productRepository.save(product);
 
-        //retrieve product data from db
-        List<Product> savedProduct = productRepository.findById(product.getProductID());
-        return new ResponseEntity<>(savedProduct, HttpStatus.OK);
+        return ResponseEntity.ok(productRepository.save(product));
     }
     /**
      * Finds a product by id.

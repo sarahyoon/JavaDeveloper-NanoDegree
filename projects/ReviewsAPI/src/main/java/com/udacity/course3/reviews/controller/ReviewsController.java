@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,11 +42,11 @@ public class ReviewsController {
      * @return The created review or 404 if product id is not found.
      */
     @RequestMapping(value = "/reviews/products/{productId}", method = RequestMethod.POST)
-    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody Review reviews) {
-        Optional<Product> OptionalProduct = productRepository.findById(productId);
+    public ResponseEntity<?> createReviewForProduct(@PathVariable("productId") Integer productId, @RequestBody @Valid Review reviews) {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
 
-        if(OptionalProduct.isPresent()){
-            Product product = OptionalProduct.get();
+        if(optionalProduct.isPresent()){
+            Product product = optionalProduct.get();
             //save mysql
             reviews.setProduct(product);
             reviews.setContent(reviews.getContent());
@@ -65,6 +66,7 @@ public class ReviewsController {
         List<ReviewDocument> savedReview = reviewMongoRepository.findByProductID(productId);
         return new ResponseEntity<>(savedReview, HttpStatus.OK);
     }
+
 
     /**
      * Lists reviews by product.
