@@ -1,10 +1,8 @@
 package com.udacity.course3.reviews.entity;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +10,9 @@ import java.util.List;
 @Document("reviews")
 public class ReviewDocument {
 
-    @Id
-    private String id;
+    private String _id;
 
+    @Id
     private int reviewID;
 
     private int productID;
@@ -24,16 +22,21 @@ public class ReviewDocument {
 
     private List<Comment> comment = new ArrayList<>();
 
-    public String getId() {
-        return id;
+    public ReviewDocument(){
     }
 
-    public int getReviewID() {
+    public ReviewDocument(Review review){
+        this.reviewID = review.getReviewID();
+        this.productID = review.getProduct().getProductID();
+        this.content = review.getContent();
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public int getReviewID(){
         return reviewID;
-    }
-
-    public void setReviewID(int reviewID) {
-        this.reviewID = reviewID;
     }
 
     public int getProductID() {

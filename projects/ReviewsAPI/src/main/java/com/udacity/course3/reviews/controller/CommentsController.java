@@ -1,6 +1,7 @@
 package com.udacity.course3.reviews.controller;
 
 
+import com.mongodb.Mongo;
 import com.udacity.course3.reviews.entity.Comment;
 import com.udacity.course3.reviews.entity.Review;
 import com.udacity.course3.reviews.entity.ReviewDocument;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +39,9 @@ public class CommentsController {
     @Autowired
     ReviewMongoRepository reviewMongoRepository;
 
+    @Autowired
+    MongoTemplate mongoTemplate;
+
     /**
      * Creates a comment for a review.
      *
@@ -52,10 +57,25 @@ public class CommentsController {
         Optional<Review> OptionalReview = reviewRepository.findById(reviewId);
         Review review;
         if(OptionalReview.isPresent()){
+            //save mysql
             review = OptionalReview.get();
             comment.setReview(review);
             comment.setContent(comment.getContent());
             commentRepository.save(comment);
+
+            //save comment to review mongo document
+            ReviewDocument reviewDocument = reviewMongoRepository.findByReviewID(reviewId);
+            Criteria criteria = new Criteria("_id");
+            criteria.is(reviewDocument.get_id());
+
+            Query query = new Query(criteria);
+            mongoTemplate.remove(query, "reviews");
+
+            ReviewDocument updatedDoc = new ReviewDocument(review);
+            List<Comment> commentList = new ArrayList<>();
+            commentList.add(comment);
+            reviewDocument.setComment(commentList);
+            reviewMongoRepository.save(updatedDoc);
         }
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -76,6 +96,7 @@ public class CommentsController {
     @RequestMapping(value = "/reviews/{reviewId}", method = RequestMethod.GET)
     public List<?> listCommentsForReview(@PathVariable("reviewId") Integer reviewId) {
         Optional<Review> optionalReview = reviewRepository.findById(reviewId);
+        System.out.println(optionalReview.get().getReviewID());
         if(!optionalReview.isPresent()){
             throw new HttpServerErrorException(HttpStatus.NOT_FOUND);
         }

@@ -53,10 +53,7 @@ public class ReviewsController {
             reviewRepository.save(reviews);
 
             //save mongoDB
-            ReviewDocument reviewDocument = new ReviewDocument();
-            reviewDocument.setReviewID(reviews.getReviewID());
-            reviewDocument.setContent(reviews.getContent());
-            reviewDocument.setProductID(productId);
+            ReviewDocument reviewDocument = new ReviewDocument(reviews);
             reviewMongoRepository.save(reviewDocument);
         }
         else{
