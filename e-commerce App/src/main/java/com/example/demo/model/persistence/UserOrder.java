@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -36,7 +35,7 @@ public class UserOrder {
 	@ManyToOne
 	@JoinColumn(name="user_id", nullable = false, referencedColumnName = "id")
 	@JsonProperty
-    private User user;
+    private EcommerceUser user;
 	
 	@JsonProperty
 	@Column
@@ -58,11 +57,11 @@ public class UserOrder {
 		this.items = items;
 	}
 
-	public User getUser() {
+	public EcommerceUser getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(EcommerceUser user) {
 		this.user = user;
 	}
 	
