@@ -4,7 +4,7 @@ This project goal is to add authentication and authorization controls so users c
 
 ## Project Template
 
-1. Set template
+#### 1. Set template
 The template is written in Java using Spring Boot, Hibernate ORM, and the H2 database.
 Included, 5 packages:
 
@@ -18,7 +18,7 @@ Included, 5 packages:
 
 * controllers - these contain the api endpoints for our app, 1 per model. 
 
-2. Run Project
+#### 2. Run Project
 Once started, using a REST client, such as Postman, explore the APIs.
 
 Some examples are as below:
