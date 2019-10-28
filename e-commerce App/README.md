@@ -5,8 +5,7 @@ This project goal is to add authentication and authorization controls so users c
 ## Project Template
 
 1. Set template
-The template is written in Java using Spring Boot, Hibernate ORM, and the H2 database. 
-
+The template is written in Java using Spring Boot, Hibernate ORM, and the H2 database.
 Included, 5 packages:
 
 * demo - this package contains the main method which runs the application
