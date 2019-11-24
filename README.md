@@ -19,3 +19,6 @@ UDACITY JAVA DEVELOPER NANO DEGREE Course practices and projects.
      : Built a both Mongo DB and MySQL part of persistence layer for a REST API that supports sorting and filtering customer          reviews in an ecommerce application. 
    - **eCommerce API**<br>
      : Implemented handling of authorization with security using JWT for login, search purchase history and cart details.
+
+### 
+<img src="https://user-images.githubusercontent.com/24666180/69496070-497cd580-0f11-11ea-9419-48a01a8a1dae.png"/>
